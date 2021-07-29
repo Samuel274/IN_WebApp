@@ -13,6 +13,10 @@ con.connect((error)=>{
     console.log('Connected to DB');
 })
 
-con.query('SELECT user FROM mysql.user',(request,response)=>{
+con.query('INSERT INTO webapp_user (username, email, password) VALUES ("testi", "testo@web.de", "teste123")',(request,response)=>{
+    console.log(response)
+})
+
+con.query('SELECT * FROM webapp_user',(request,response)=>{
     console.log(response)
 })
